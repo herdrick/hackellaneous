@@ -27,7 +27,7 @@ def explore_node(u,out_edges_f):
     explored.add(u)
 
 # contains functions specific to this graph exploration problem
-def bittorrent_challenge(max_sum_of_digits):
+def challenge(max_sum_of_digits):
     # ex. 
     #digits(49)
     # (4, 9)
@@ -55,8 +55,12 @@ def bittorrent_challenge(max_sum_of_digits):
     while node:
         explore_node(node,out_edges_f=out_edge_destinations)
         node=next_unexplored_node()
-    print 'DONE.'
     return len(explored)
-    
-# recur. note that this style of graph traversal, popping a node off the frontier to recur on, means that the call stack doesn't look like a path decending through the graph with max depth being the max depth of the graph. instead we go one level deeper into the call stack for each node in the graph. this is true whether we do BFS or DFS.
-# this function is not tail recursive. put Is_solution into the signature of coins_graph_search() and then return that plus to make it so.
+
+if __name__=="__main__": # if this is run as a script
+    import sys
+    try:
+        max_sum_of_digits=int(sys.argv[1])
+    except IndexError:
+        max_sum_of_digits=19
+    print challenge(max_sum_of_digits),'nodes reachable with',max_sum_of_digits,'as max sum of digits'
