@@ -1,0 +1,16 @@
+$def with (node_set,x_from,y_from,x_to,y_to)
+<html>
+<head>
+</head>
+<body>
+<p>Reachable nodes: $len(node_set)</p>
+<p>(example url to try: <a href="/graph_viz?max_sum_of_digits=9&x_from=-5&x_to=100&y_from=-5&y_to=100">/graph_viz?max_sum_of_digits=9&x_from=-5&x_to=100&y_from=-5&y_to=100</a> .)</p>
+<table>
+$for y in range(y_from,y_to):
+  <tr>
+  $for x in range(x_from,x_to):
+                  <td>$('o' if x==0 and y==0 else ('k' if (x % 1000)==0 and (y % 1000)==0 else ('x' if (x,y) in node_set else '-')))</td>
+  </tr>
+</table>
+</body>
+</html>
