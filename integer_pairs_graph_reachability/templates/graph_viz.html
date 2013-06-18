@@ -1,10 +1,12 @@
-$def with (node_set,x_from,y_from,x_to,y_to)
+$def with (node_set,max_sum_of_digits,x_from,y_from,x_to,y_to)
 <html>
 <head>
 </head>
 <body>
 <p>Reachable nodes: $len(node_set)</p>
-<p>(example url to try: <a href="/graph_viz?max_sum_of_digits=9&x_from=-5&x_to=100&y_from=-5&y_to=100">/graph_viz?max_sum_of_digits=9&x_from=-5&x_to=100&y_from=-5&y_to=100</a> .)</p>
+$code:
+    url='/graph_viz?max_sum_of_digits='+str(max_sum_of_digits)+'&x_from='+str(x_from)+'&x_to='+str(x_to)+'&y_from='+str(y_from)+'&y_to='+str(y_to)
+<p>(long form url: <a href="$url">$url</a> .)</p>
 <table>
 $for y in range(y_from,y_to):
   <tr>
