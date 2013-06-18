@@ -28,6 +28,7 @@ def explore_node(u,out_edges_f):
 
 # contains functions specific to this graph exploration problem
 def challenge(max_sum_of_digits):
+    init()
     # ex. 
     #digits(49)
     # (4, 9)
@@ -51,7 +52,7 @@ def challenge(max_sum_of_digits):
             return sum(map(abs, digits(x_coord(node))+digits(y_coord(node)))) <= max_sum_of_digits
         mods=((1,0),(0,1),(-1,0),(0,-1))
         return filter (acceptable, map (lambda mod: tuple(map(sum,zip(node,mod))), mods))
-    node=(0,0)
+    node=(0,0) 
     while node:
         explore_node(node,out_edges_f=out_edge_destinations)
         node=next_unexplored_node()
