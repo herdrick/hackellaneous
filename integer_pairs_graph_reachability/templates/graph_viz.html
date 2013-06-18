@@ -6,7 +6,9 @@ $def with (node_set,max_sum_of_digits,x_from,y_from,x_to,y_to)
 <p>Reachable nodes: $len(node_set)</p>
 $code:
     url='/graph_viz?max_sum_of_digits='+str(max_sum_of_digits)+'&x_from='+str(x_from)+'&x_to='+str(x_to)+'&y_from='+str(y_from)+'&y_to='+str(y_to)
+    github_url='https://github.com/herdrick/hackellaneous/tree/master/integer_pairs_graph_reachability'
 <p>(long form url: <a href="$url">$url</a> .)</p>
+<p>code: <a href="$github_url">$github_url</a></p>
 <table>
 $for y in range(y_from,y_to):
   <tr>
