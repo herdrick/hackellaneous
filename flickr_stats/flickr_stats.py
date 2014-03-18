@@ -1,4 +1,8 @@
 #!/usr/bin/env python -u
+# examples:
+#  ./flickr_stats.py sf --by-tag
+#  ./flickr_stats.py 'palo alto' --date-range '01-01 01-04' --by-tag
+# use -h option for docs.
 # logging user-friendly progress status written to stderr; output is lines of tab-delimited columns written to stdout.
 import argparse, sys, os, collections, calendar, datetime, json, itertools, flickrapi
 from dateutil import parser as dateutil_parser
