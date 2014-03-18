@@ -1,24 +1,7 @@
-#!/usr/bin/env python
-# script to be run from command line. use -h option for docs.
+#!/usr/bin/env python -u
 # logging user-friendly progress status written to stderr; output is lines of tab-delimited columns written to stdout.
 import argparse, sys, os, collections, calendar, datetime, json, itertools, flickrapi
 from dateutil import parser as dateutil_parser
-
-
-# make stdout and stderr unbuffered
-class Unbuffered:
-    def __init__(self, stream):
-        self.stream = stream
-
-    def write(self, data):
-        self.stream.write(data)
-        self.stream.flush()
-
-    def __getattr__(self, attr):
-        return getattr(self.stream, attr)
-
-sys.stdout = Unbuffered(sys.stdout)
-sys.stderr = Unbuffered(sys.stderr)
 
 api_key = '42ce6cfc281462a7b1c079ebe428bf6b'
 flickr = flickrapi.FlickrAPI(api_key, cache=True)
