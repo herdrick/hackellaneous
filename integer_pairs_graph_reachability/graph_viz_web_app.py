@@ -4,10 +4,15 @@ render = web.template.render('templates/',globals={'str':str})
 import graph_explore
 
 urls = (
+    '/', 'default',
     '/graph_viz', 'graph_viz',
-
 )
 app=web.application(urls, globals())
+
+
+class default:
+    def GET(self):
+        raise web.seeother('/graph_viz')
 
 class graph_viz:        
     def GET(self):
