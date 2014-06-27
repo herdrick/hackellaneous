@@ -16,7 +16,7 @@ class default:
 
 class graph_viz:        
     def GET(self):
-        i=web.input(max_sum_of_digits=19,x_from=-200,y_from=-200,x_to=200,y_to=200)
+        i=web.input(max_sum_of_digits=19,x_from=-100,y_from=-100,x_to=100,y_to=100)
         if int(i.max_sum_of_digits) > 25:
             raise web.seeother('/graph_viz?max_sum_of_digits=10&x_from=i.x_from&x_to=i.x_to&y_from=i.y_from&y_to=i.y_to')
         print 'graph_explore.init()'
